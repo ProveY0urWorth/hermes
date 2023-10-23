@@ -1,6 +1,6 @@
 # hermes
 
-A new Flutter project.
+A new Flutter project for expanding skills with flutter, android and windows. Uses data from finnhub.io and stores it in local sqlite db.
 
 ## Getting Started
 
