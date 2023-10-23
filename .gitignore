@@ -47,3 +47,4 @@ app.*.map.json
 /web/
 /macos/
 /ios/
+lib/src/core/constants/finhub_constats.dart
