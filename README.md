@@ -1,16 +1,15 @@
 # hermes
 
-A new Flutter project for expanding skills with flutter, android and windows. Uses data from finnhub.io and stores it in local sqlite db.
+A new Flutter project for expanding skills with flutter, android and windows. Uses data from [finnhub.io](https://finnhub.io/) and stores it in local sqlite db.
 
-## Getting Started
+## Getting started
 
-This project is a starting point for a Flutter application.
+Just head to [finnhub.io](https://finnhub.io/), get your API key and paste it in [this file](lib\src\core\constants\finhub_constats.dart).
 
-A few resources to get you started if this is your first Flutter project:
+## What it can do
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This project gives you an opportunity to :
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- see financial news which includes general, forex, crypto or merger news;
+- see stocks for US companies and save them to track them;
+- look through company info, news and candles charts.
