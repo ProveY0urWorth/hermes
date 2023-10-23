@@ -4,7 +4,7 @@ A new Flutter project for expanding skills with flutter, android and windows. Us
 
 ## Getting started
 
-Just head to [finnhub.io](https://finnhub.io/), get your API key and paste it in [this file](lib\src\core\constants\finhub_constats.dart).
+Just head to [finnhub.io](https://finnhub.io/), get your API key and paste it in [this file](lib/src/core/constants/finhub_constats.dart).
 
 ## What it can do
 
