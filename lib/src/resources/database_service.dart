@@ -45,7 +45,7 @@ class DatabaseService {
   Future<int> getLastItemId() async {
     final Database db = await initializeDB();
     final List<Map<String, dynamic>> maps = await db.query('stocks');
-    if (maps.last.isNotEmpty) {
+    if (maps.isNotEmpty) {
       return maps.last['id'];
     } else {
       return 0;

@@ -7,10 +7,7 @@ import 'package:hermes/src/ui/company_data.dart';
 
 class HermesSearchBarDelegate extends SearchDelegate {
   SymbolLookupItemModel resultData = SymbolLookupItemModel(
-      description: '',
-      displaySymbol: 'displaySymbol',
-      symbol: 'symbol',
-      type: 'type');
+      description: '', displaySymbol: '', symbol: '', type: '');
 
   @override
   List<Widget>? buildActions(BuildContext context) => [

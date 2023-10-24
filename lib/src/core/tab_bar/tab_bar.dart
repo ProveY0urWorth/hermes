@@ -30,11 +30,11 @@ class HermesTabBar extends StatelessWidget {
       ),
       Tab(
         icon: Icon(Icons.attach_money),
-        text: 'Stocks',
+        text: 'Following stocks',
       ),
       Tab(
         icon: Icon(Icons.star),
-        text: 'My favorites',
+        text: 'Favorite companies',
       )
     ]);
   }

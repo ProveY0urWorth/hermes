@@ -113,7 +113,7 @@ class CompanyData extends StatelessWidget {
     );
   }
 
-  Widget buildGraphs(BuildContext context) {
+  Widget buildTabBar(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(15),
       child: Container(
