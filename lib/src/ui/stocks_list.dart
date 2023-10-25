@@ -12,39 +12,43 @@ class StokcsList extends StatelessWidget {
   Widget build(BuildContext context) {
     stocksBloc.fetchStoksList();
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Search'),
-        actions: [
-          IconButton(
-              onPressed: () {
-                showSearch(
-                    context: context, delegate: HermesSearchBarDelegate());
-              },
-              icon: const Icon(Icons.search))
-        ],
-      ),
-      body: StreamBuilder(
-        stream: stocksBloc.stocks,
-        builder: (context, AsyncSnapshot<List<StockItemModel>> snapshot) {
-          if (snapshot.hasData) {
-            return buildList(snapshot, stocksBloc.names);
-          } else if (snapshot.hasError) {
-            return Text(
-              snapshot.error.toString(),
-              style: TextStyler.error,
-            );
-          } else if (!snapshot.hasData) {
-            return const Center(
-              child: Text(
-                'No following stocks found !',
-                style: TextStyler.bold,
-              ),
-            );
-          }
-          return const Center(child: CircularProgressIndicator());
-        },
-      ),
-    );
+        appBar: AppBar(
+          title: const Text('Search'),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  showSearch(
+                      context: context, delegate: HermesSearchBarDelegate());
+                },
+                icon: const Icon(Icons.search))
+          ],
+        ),
+        body: RefreshIndicator(
+          child: StreamBuilder(
+            stream: stocksBloc.stocks,
+            builder: (context, AsyncSnapshot<List<StockItemModel>> snapshot) {
+              if (snapshot.hasData) {
+                return buildList(snapshot, stocksBloc.names);
+              } else if (snapshot.hasError) {
+                return Text(
+                  snapshot.error.toString(),
+                  style: TextStyler.error,
+                );
+              } else if (!snapshot.hasData) {
+                return const Center(
+                  child: Text(
+                    'No following stocks found !',
+                    style: TextStyler.bold,
+                  ),
+                );
+              }
+              return const Center(child: CircularProgressIndicator());
+            },
+          ),
+          onRefresh: () async {
+            stocksBloc.fetchStoksList();
+          },
+        ));
   }
 
   Widget buildList(

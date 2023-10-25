@@ -1,7 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:hermes/src/core/decoration/container_decoration.dart';
+import 'package:hermes/src/core/styles/text_styles.dart';
+import 'package:hermes/src/ui/simple_components/link_component.dart';
 import 'package:hermes/src/ui/simple_components/network_asset_svg.dart';
+import 'package:hermes/src/ui/simple_components/text_with_label.dart';
 
 class CompanyListComponent extends StatelessWidget {
   const CompanyListComponent(
@@ -34,11 +37,36 @@ class CompanyListComponent extends StatelessWidget {
           child: Row(
             children: [
               NetworkSVGAsset(imageUrl: _logo),
-              const SizedBox(width: 10),
-              Wrap(
-                runSpacing: 10,
-                children: [],
-              )
+              const SizedBox(width: 5),
+              SizedBox(
+                width: 200,
+                child: Wrap(
+                  runSpacing: 10,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          _name,
+                          textAlign: TextAlign.start,
+                          style: TextStyler.largeBold,
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        TextWithLabel(label: 'Industry: ', text: _industry),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        TextWithLabel(label: 'Ticker: ', text: _ticker),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        LinkComponent(webUrl: _website, title: 'WebSite'),
+                      ],
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),

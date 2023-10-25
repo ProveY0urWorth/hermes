@@ -52,4 +52,18 @@ class FinhubAPIProvider {
       throw Exception('Failed to load company info!');
     }
   }
+
+  Future<MarketNewsResponseModel> getCompanyNews(String symbol) async {
+    DateTime now = DateTime.now();
+    //DateTime date = DateTime(now.year, now.month, now.day);
+    String dateNow = '${now.year}-${now.month}-${now.day}';
+    String dateThen = '${now.year - 1}-${now.month}-${now.day}';
+    final response = await client.get(Uri.parse(
+        '$_baseUrl/company-news?symbol=$symbol&from=$dateThen&to=$dateNow&token=$_apiKey'));
+    if (response.statusCode == 200) {
+      return MarketNewsResponseModel.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load company news');
+    }
+  }
 }

@@ -69,7 +69,7 @@ class CompanyInfoModel {
     _ipo = result["ipo"];
     _marketCapitalization = result["marketCapitalization"].toDouble();
     _name = result["name"];
-    _phone = result["phone"];
+    _phone = result["phone"].substring(0, result["phone"].length - 2);
     _shareOutstanding = result["shareOutstanding"].toDouble();
     _ticker = result["ticker"];
     _weburl = result["weburl"];

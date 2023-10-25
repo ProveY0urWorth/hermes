@@ -28,4 +28,7 @@ class Repository {
 
   Future<CompanyInfoModel> fetchCompanyInfo(String symbol) =>
       provider.getCompanyInfo(symbol);
+
+  Future<MarketNewsResponseModel> fetchCompanyNews(String symbol) =>
+      provider.getCompanyNews(symbol);
 }
